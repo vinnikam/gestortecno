@@ -1,0 +1,25 @@
+1. Cree en la raiz un archivo .env
+2. Cree las propiedades
+
+    DB_URL=
+    DB_USERNAME=
+    DB_PASSWORD=
+
+3. Asigne los valores segun su configuración
+
+    DB_URL=jdbc:postgresql://localhost:5432/basedatos
+    DB_USERNAME=elusuario
+    DB_PASSWORD=12456
+
+4. Verifique en el archivo YML donde se invoquen las propiedades:
+    # Base de datos
+  datasource:
+    db-kind: postgresql
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    jdbc:
+      url: ${DB_URL}
+
+ 5. No olvide colocar en el archivo gitignore el archivo, ya que este no debe subirse al github
+
+.env
