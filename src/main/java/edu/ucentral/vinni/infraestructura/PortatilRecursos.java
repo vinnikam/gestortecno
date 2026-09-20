@@ -18,7 +18,7 @@ public class PortatilRecursos {
     PortatilServicio portatilServicio;
 
     @POST
-    @Path("/crear")
+    @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(
