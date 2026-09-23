@@ -1,7 +1,7 @@
 package edu.ucentral.vinni.infraestructura;
 
 import edu.ucentral.vinni.aplicacion.PortatilServicio;
-import edu.ucentral.vinni.dominio.Portatil;
+import edu.ucentral.vinni.infraestructura.dto.PortatilPayLoad;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
@@ -33,8 +33,8 @@ public class PortatilRecursos {
             responseCode = "400",
             description = "Datos de entrada invalidos"
     )
-    public Response crear(Portatil portatil){
-        this.portatilServicio.crear(portatil);
+    public Response crear(PortatilPayLoad portatilPayLoad){
+        this.portatilServicio.crear(portatilPayLoad);
         return Response.status(Response.Status.CREATED).build();
     }
 }

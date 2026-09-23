@@ -16,9 +16,8 @@ quarkus:
 
     # Base de datos
   datasource:
-    db-kind: postgresql
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    db-kind: h2
+
     jdbc:
       url: ${DB_URL}
 
