@@ -9,6 +9,8 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import org.jboss.logging.Logger;
 
+import java.util.List;
+
 
 @ApplicationScoped
 public class PortatilServicio {
@@ -28,5 +30,15 @@ public class PortatilServicio {
                 portatilPayLoad.memoria());
 
             portatilRepositorio.persist(portatil);
+    }
+
+    public List<PortatilPayLoad> consultarTodos() {
+        List<Portatil> pors = portatilRepositorio.listAll();
+
+        return pors.stream()
+                .map(p -> new PortatilPayLoad(p.serial, p.marca, p.memoria))
+                .toList();
+
+
     }
 }
