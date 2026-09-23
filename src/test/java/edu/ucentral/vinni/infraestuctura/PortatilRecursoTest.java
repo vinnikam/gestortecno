@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 @QuarkusTest
 public class PortatilRecursoTest {
     @Test
-    public void testCrearEstudiante() {
+    public void testCrearPortatil() {
         String json = """
         { 
           "serial" : "001",
@@ -26,7 +26,7 @@ public class PortatilRecursoTest {
                 .statusCode(201);
     }
     @Test
-    public void testCrearEstudianteVacios() {
+    public void testCrearPortatilVacios() {
         String json = """
         { 
           "serial" : "",
