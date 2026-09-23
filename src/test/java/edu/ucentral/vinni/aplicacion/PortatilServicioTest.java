@@ -2,6 +2,7 @@ package edu.ucentral.vinni.aplicacion;
 
 import edu.ucentral.vinni.dominio.Portatil;
 import edu.ucentral.vinni.dominio.PortatilRepositorio;
+import edu.ucentral.vinni.infraestructura.dto.PortatilPayLoad;
 import io.quarkus.test.InjectMock;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
@@ -20,11 +21,9 @@ public class PortatilServicioTest {
     PortatilRepositorio portatilRepositorio;
     @Test
     public void testCrearPortatil(){
-        Portatil portatil = Portatil.builder()
-                .marca("LG")
-                .memoria(16)
-                .serial("123")
-                .build();
+        PortatilPayLoad portatil = new
+                PortatilPayLoad("LG", "123",16);
+
 
         portatilServicio.crear(portatil);
         verify(portatilRepositorio,
@@ -33,8 +32,7 @@ public class PortatilServicioTest {
     }
     @Test
     public void testCrearPortatilVacios(){
-        Portatil portatil = Portatil.builder()
-                .build();
+        PortatilPayLoad portatil = new PortatilPayLoad("", "", 0);
 
         portatilServicio.crear(portatil);
         verify(portatilRepositorio,
