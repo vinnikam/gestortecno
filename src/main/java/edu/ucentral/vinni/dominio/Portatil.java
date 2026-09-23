@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 public class Portatil extends PanacheEntity {
     public String serial;
     public String marca;
-    public int memoria;
+    public Integer memoria;
 
 }
